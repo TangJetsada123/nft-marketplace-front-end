@@ -1,6 +1,6 @@
 import {Routes, Route, Navigate } from 'react-router-dom';
-import Home from '../page/Home'
-import Market from '../page/Market';
+import Home from '../page/home'
+import Market from '../page/market';
 
 const  Routers = () => {
     return (

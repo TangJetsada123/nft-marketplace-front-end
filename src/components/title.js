@@ -1,5 +1,5 @@
 import heroImg from '../../src/assets/hero.jpg'
-import './Title.css'
+import './title.css'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -13,14 +13,14 @@ const TextDestc = styled.div`
 `
 function Title() {
     return (
-        <div className='flex mt-40 gap-24'>
+        <div className='flex mt-40 gap-24 ml-16 mr-16'>
             <div className="hero__content">
                 <h2 >
                     Discover rare digital art and collect<br />
                     <span>sell extraordinary</span> NFTs
                 </h2>
                 <TextDestc>
-                    <p>
+                    <p className='mt-5'>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                         Deleniti excepturi omnis neque <br />
                         adipisci sequi ullam unde in
@@ -35,7 +35,7 @@ function Title() {
                 </TitleButton>
             </div>
             <div className="hero__img">
-                <img src={heroImg} alt="" className="w-300 ml-12" />
+                <img src={heroImg} alt=""/>
             </div>
         </div>
     );
