@@ -9,12 +9,11 @@
   background-clip: text;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: #14141f;
-  display: inline-block;
+ 
 }
 
 .hero__img {
-  width: 800px;
-
+  width: 550px;
 }
 
 

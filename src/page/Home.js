@@ -8,7 +8,7 @@ import BrowseCategory from '../components/ui/browse-category/browse-category'
 const Home = () => {
     return (
         <div>
-            <div className='mr-16 ml-16  mb-10'>
+            <div className='mr-16 ml-16 mb-10'>
                 <Title />
                 <Tranfer />
                 <BlogSection />

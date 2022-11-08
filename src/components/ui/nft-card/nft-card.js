@@ -21,9 +21,9 @@ const NFT_CARD = () => {
                 response => setAsset(response.data))
     }, [])
     return (
-        <div className="flex gap-5">
+        <div className="flex gap-8">
             {asset.data && asset.data?.slice(0, 4).map((item) => (
-                <div className="flexbox mt-5 rounded-lg scale-100 hover:scale-110 ease-in duration-100">
+                <div className="flexbox mt-5 rounded-lg scale-100 hover:scale-110 ease-in duration-100 shadow-2xl">
                     <ImageLayOut>
                         <img src={item.image} alt="" className="rounded-lg "></img>
                     </ImageLayOut>

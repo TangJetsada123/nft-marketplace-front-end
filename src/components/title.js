@@ -13,7 +13,7 @@ const TextDestc = styled.div`
 `
 function Title() {
     return (
-        <div className='flex mt-40 gap-24 ml-16 mr-16'>
+        <div className='flex mt-40 gap-24 ml-16'>
             <div className="hero__content">
                 <h2 >
                     Discover rare digital art and collect<br />
