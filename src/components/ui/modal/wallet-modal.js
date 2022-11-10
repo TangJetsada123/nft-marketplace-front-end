@@ -22,7 +22,6 @@ const WalletModal = ({ setShowLogin, setChoice }) => {
                         <button onClick={handleCancelClick} className=" rounded px-4 py-2 text-white  bg-green-400 ">cancel</button>
                         <button onClick={handleOKClick} className="rounded px-4 py-2 ml-4 text-white bg-blue-500 ">Sign</button>
                     </div>
-
                 </div>
             </div>
         </div>
