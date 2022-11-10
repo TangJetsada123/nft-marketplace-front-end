@@ -1,0 +1,62 @@
+{
+    "user": {
+        "password": "",
+        "adress": "0xd9f3199D74214596B772A1e99D03C90d448d9b10",
+        "privateKey": "0x03d9d60752108441156f6699253d58178594d16629ee1334630d389ea5acec95",
+        "signature": "0x18ab7eac25c3c5191d16bc5ba7b7b7996de9a978c43db77df89dd87217550cea437c4f28bb403ce39cec322a64ab7954660d05ce6ef008341f29fb889d70d24c1b"
+    },
+    "user1": {
+        "password": "",
+        "adress": "0xed99dcc9d3983520ac1c02067b4e56d523d3903c",
+        "privateKey": "0x335e67a4b5653677181f849fe9cf2bb5aaa95cdfeb0d1b763a776fc810cfba3f",
+        "signature": "0x373cf2351e3f541f3c6dfd9033bf4c4226289463bb4892656d858cb9fcc90c402a657e1939788fa99ce0fa9fd6ba2af93f64a13c909dd667eecdafcc47f73b311c"
+    },
+    "user2": {
+        "password": "",
+        "adress": "0xbe24c21bd3da96077ae546ea28991ae094bf186d",
+        "privateKey": "0xf1549bc28705b2fa8dbfb80de8840fe0258bbca2329949073371aec687b1663c",
+        "signature": "0x7fe227abb48e5e9c91d0da026d27e78b3a955123e58e03e52704b2e4c03542bf0a71040c39f4382ee589bee93fdde5d293a42837c88d1fb77880f04daf53fa741c"
+    },
+    "user3": {
+        "password": "",
+        "adress": "0xe2fc96685c4c08c57f10f5f1246f4fcab243852c",
+        "privateKey": "0x5825b3954faee0fd87fa4ec5d38c20cc8064d4f27ae657e1c9c790a87f1b9492",
+        "signature": "0x1eb511f14fec38c7fa6278ad38046119b5668ae6d67958d80c323eb45b9e7d20527a0435be1c49d722231a128cfb6067426d5d797940253ae3955ace276c81ee1c"
+    },
+    "user4": {
+        "password": "",
+        "adress": "0x639a9c27bfcd09ca75f957e0c0d28a7ead489b48",
+        "privateKey": "0xab43dfd6a71c804fb83e99ae17c45018fc108a0df83c28c4e24506767f9cbfbf",
+        "signature": "0xa0636e81ba44f496f2926fd1a9b6e3483909626ff5012e8f47f1f53f8491626a3b9ea56dd23bd4bc7cdbad002b495df9f84b87c6d711862cab652766beb7b0be1b"
+    },
+    "user5": {
+        "password": "",
+        "adress": "0x5c65b9746552a04b94f04b47e3597e205c5935c2",
+        "privateKey": "0x68f62d5743321097fea6d529fb9d998796d49d15b515712c4f3a506659a1459a",
+        "signature": "0x591261f7c23fb3b4a940c01ce71e3f0fc7f14f636e8714f027842d05da83d4400b3e5d4dfd8b022d38d343757bbadf520eade507b08ec9d8e3b3a95ee81953891b"
+    },
+    "user6": {
+        "password": "",
+        "adress": "0x17adefdd7ebb00e3ca90fdc5236af9942b210893",
+        "privateKey": "0x2ddc1379ab8ba78ea984a20d824f0e5c0007f0cfd481568b55a2f17278e01b5e",
+        "signature": "0x156e8dbad11c031df25b5e05a81f86ae6591527fe113936be5344c3bb6fa3ce07d5dd02c8c00e956a1031821a04135a234424121af1f4ed5ec3a0aa94d18d6d91c"
+    },
+    "user7": {
+        "password": "",
+        "adress": "0x7e72b4c1381f3b4ec3d0ebe50f91fb63f30e1cc1",
+        "privateKey": "0x00fea71eef218570aa60ac1fa3edd14da9157ec86fd9531b94a851b00741c4e5",
+        "signature": "0x1391d7b93c3d46120d14cb11966089182e72313fe506ed40be8513a2fafa1e9b49c0696243edb7fe06de29b477cf0305916a3870589efa988abecdde516ba41a1b"
+    },
+    "user8": {
+        "password": "",
+        "adress": "0x1b5e3f6f4ffa17f53a0660471c9b77f496cd268d",
+        "privateKey": "0xfd6643c3cf70f0de49363af740e55608099e38b525e1e33d04c873c5f6c693b5",
+        "signature": "0x8b80f658becd80d137043a598726ca6671b2ef4efb46e00646d10f5a9234f72a4590ec1f07c22cac7057a5de5926251e72640df5e01f5b7fffadd8a56dbd82a51c"
+    },
+    "user9": {
+        "password": "",
+        "adress": "0xef56a877af02051a182b98c01d9a227249627ab0",
+        "privateKey": "0x227b1f0ef40303d1c781ba95376f5d3e6112e0a20a7552df1219a2eb3f297a8a",
+        "signature": "0x8893fa2e825a1640de26a0a681ca80e417d625c33d7c932c534a5473ce8e50cd48bc327dd92120e453f2a7b4e741ab58375efeaca4ea9414d44b5b6cdfa5d2721c"
+    }
+}
