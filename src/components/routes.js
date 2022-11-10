@@ -15,9 +15,11 @@ const  Routers = () => {
 }
 =======
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from "../page/home";
-import Market from "../page/market";
+import Home from "../page/Home";
+import Market from "../page/Market";
 import Account from "../page/account";
+import Create from "../page/Create";
+
 const Routers = () => {
   return (
     <Routes>
@@ -25,6 +27,7 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/market" element={<Market />} />
       <Route path="/account" element={<Account />} />
+      <Route path="/create" element={<Create />} />
     </Routes>
   );
 };
