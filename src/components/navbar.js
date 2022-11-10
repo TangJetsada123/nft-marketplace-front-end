@@ -11,7 +11,10 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import metamask from '../assets/images/metamask.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
+<<<<<<< HEAD
 import WalletModal from "./ui/modal/wallet-modal";
+=======
+>>>>>>> f75c97f (feat: login metamask)
 const Wallet = styled.button`
   margin-left: 65%;
 `;
