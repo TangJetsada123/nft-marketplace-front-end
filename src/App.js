@@ -9,7 +9,7 @@ function App() {
         <div>
           <Routers />
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
   );
 }

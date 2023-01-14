@@ -4,7 +4,7 @@ import { GrFacebookOption } from 'react-icons/gr';
 
 const Footer = () => {
   return (
-    <div className="h-[399.82px] md:h-[557px] lg:h-[375px] relative z-0 bg-[#07111E]">
+    <div className="h-[399.82px] md:h-[557px] lg:h-[375px]  z-0 bg-[#07111E] ">
       <div className="absolute z-10 lg:flex  ml-16">
         <div >
           <div className="mt-4 mx-2 md:mx-4 lg:ml-[145.83px] lg:mt-[86px] 2xl:ml-[300px]">
