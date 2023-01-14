@@ -1,7 +1,7 @@
 import metamask from '../../../assets/images/metamask.png'
 
 
-const WalletModal = ({ setShowLogin, setChoice }) => {
+export const WalletModal = ({ setShowLogin, setChoice }) => {
     const handleOKClick = () => {
         setChoice(true)
         setShowLogin(false)
@@ -28,5 +28,3 @@ const WalletModal = ({ setShowLogin, setChoice }) => {
 
     )
 }
-
-export default WalletModal;
