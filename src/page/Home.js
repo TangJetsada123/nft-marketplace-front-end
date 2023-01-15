@@ -4,12 +4,14 @@ import Title from '../components/title'
 import Tranfer from '../components/ui/tranfer'
 import BlogSection from '../components/ui/blog-section/blog-section'
 import BrowseCategory from '../components/ui/browse-category/browse-category'
+import Trend from '../components/ui/trend/trend'
 
-const Home = () => {
+export const Home = () => {
     return (
         <div>
             <div className='mr-16 ml-16 mb-10'>
                 <Title />
+                <Trend/>
                 <Tranfer />
                 <BlogSection />
                 <BrowseCategory />
@@ -18,4 +20,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+
