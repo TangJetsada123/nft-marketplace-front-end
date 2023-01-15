@@ -4,7 +4,7 @@ import img13 from '../assets/images/img-25.png'
 import React from 'react'
 import BlogSection from '../components/ui/blog-section/blog-section';
 
-const Blog = () => {
+export const Blog = () => {
     return (
         <div className='mt-24 ml-16 mr-16'>
            <BlogSection/>
@@ -33,4 +33,4 @@ const Blog = () => {
     );
 }
 
-export default Blog;
+

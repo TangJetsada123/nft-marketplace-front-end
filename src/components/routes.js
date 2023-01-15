@@ -1,9 +1,11 @@
 import {Routes, Route, Navigate } from 'react-router-dom';
-import Home from '../page/home'
-import Explore from '../page/explore';
-import Account from '../page/account';
-import Create from '../page/create';
-import Blog from '../page/blog';
+import {Home} from '../page/Home'
+import {Explore} from '../page/explore'
+import {Account} from '../page/account'
+import {Create} from '../page/Create'
+import {Blog} from '../page/Blog'
+
+
 const  Routers = () => {
     return (
         <Routes>

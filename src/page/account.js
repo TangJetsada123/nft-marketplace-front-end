@@ -26,7 +26,7 @@ const DisplayBox = styled.div`
     height: auto;
 `
 
-const Account = () => {
+export const Account = () => {
     const [user, setUser] = useState([])
     const [login, setLogin] = useState(false)
     useEffect(() => {
@@ -136,4 +136,3 @@ const Account = () => {
         </div>
     )
 }
-export default Account;

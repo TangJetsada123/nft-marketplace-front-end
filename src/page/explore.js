@@ -6,7 +6,7 @@ const GenreDiv = styled.div`
 `
 
 
-const Explore = () => {
+export const Explore = () => {
     return (
         <div className="mt-32 ml-16">
             <div className="flex-box">
@@ -31,5 +31,3 @@ const Explore = () => {
         </div>
     );
 }
-
-export default Explore;

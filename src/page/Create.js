@@ -1,7 +1,7 @@
 import React from "react";
 import { IoMdImage } from "react-icons/io";
 
-const Create = () => {
+export const Create = () => {
   return (
     <div className="flex justify-center">
       <div className="my-24">
@@ -56,5 +56,3 @@ const Create = () => {
     </div>
   );
 };
-
-export default Create;
