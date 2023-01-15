@@ -1,8 +1,9 @@
 import {Routes, Route, Navigate } from 'react-router-dom';
-import Home from '../page/home'
-import Market from '../page/market';
-import Account from '../page/account'
-const  Routers = () => {
+import {Home} from '../page/Home'
+import {Market} from '../page/Market'
+import  {Account} from '../page/account'
+
+export const  Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Navigate to='/home'/>}/>
@@ -12,4 +13,3 @@ const  Routers = () => {
         </Routes>
     );
 }
-export default Routers;

@@ -2,7 +2,7 @@ import logo from '../assets/logo-footer.png';
 import { AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai';
 import { GrFacebookOption } from 'react-icons/gr';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="h-[399.82px] md:h-[557px] lg:h-[375px] relative z-0 bg-[#07111E]">
       <div className="absolute z-10 lg:flex">
@@ -99,4 +99,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+

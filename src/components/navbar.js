@@ -6,16 +6,17 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import WalletModal from './ui/modal/wallet-modal';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import metamask from '../assets/images/metamask.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
-const Wallet = styled.button`
-    margin-left: 65%;
-`
+import {WalletModal} from '../components/ui/modal/wallet-modal'
 
-function Navbar() {
+const Wallet = styled.button`
+  margin-left: 65%;
+`;
+
+export const Navbar = () => {
     const navigate = useNavigate();
     const [showLogin, setShowLogin] = useState(false);
     const [choice, setChoice] = useState(false);
@@ -192,7 +193,7 @@ function Navbar() {
                                                     </div>
                                                 }
                                                 {
-                                                    loginMetamask && 
+                                                    loginMetamask &&
                                                     <div>Hello world</div>
                                                 }
                                             </div>
@@ -210,4 +211,3 @@ function Navbar() {
     );
 }
 
-export default Navbar;
