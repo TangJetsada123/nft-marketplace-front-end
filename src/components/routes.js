@@ -3,8 +3,8 @@ import {Home} from '../page/Home'
 import {Explore} from '../page/explore'
 import {Account} from '../page/account'
 import {Create} from '../page/Create'
-import {Blog} from '../page/Blog'
-
+import Asset_Card from './ui/nft-card/asset-card';
+import Edit from '../page/EditAccount';
 
 const  Routers = () => {
     return (
@@ -14,7 +14,8 @@ const  Routers = () => {
             <Route path="/market" element={<Explore />}/>
             <Route path="/account" element={<Account />}/>
             <Route path="/create" element={<Create />}/>
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/edit-profile" element={<Edit/>} />
+            <Route path='/asset' element={<Asset_Card />} />
         </Routes>
     );
 }

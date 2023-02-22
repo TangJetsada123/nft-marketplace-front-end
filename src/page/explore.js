@@ -12,17 +12,17 @@ export const Explore = () => {
     let [asset, setAsset] = useState([])
     const [name, setName] = useState('');
     const [filterType, setFilterType] = useState(JSON.stringify({ name: 'ASC' }));
+    const [cateId,setCateId] = useState('')
 
     useEffect(() => {
         const fetchData = async () => {
             axios
-                .get(`http://localhost:8000/api/asset/?name=${name}&sort=${filterType}`)
+                .get(`https://nft-marketplace-service-production.up.railway.app/api/asset?category_id=${cateId}`)
                 .then(
                     response => setAsset(response.data.data))
         };
         fetchData();
-    }, [name, filterType])
-
+    }, [name, filterType,cateId])
     const valueSort = {
         nameASC: { name: 'ASC' },
         nameDESC: { name: 'DESC' },
@@ -36,7 +36,7 @@ export const Explore = () => {
         <div className="mt-32 ml-16 mr-16">
             <div className="flex-box">
                 <div className="font-bold text-5xl mb-3">Explore Collections</div>
-                <div className="relative mb-3">
+                <div className="relative mb-3 flex">
                     <form className=" basis-5/6 ">
                         <div >
                             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -72,7 +72,7 @@ export const Explore = () => {
                         onChange={(e) => {
                             setFilterType(e.target.value);
                         }}
-                        className="border rounded-md w-48 h-full shadow-lg py-2 px-4 ">
+                        className=" ml-8 border rounded-md w-48 h-[65px] shadow-lg py-2 px-4 ">
                         <option value={JSON.stringify(valueSort.nameASC)}>sort</option>
                         <option value={JSON.stringify(valueSort.nameASC)}>
                             By A - Z
@@ -93,24 +93,23 @@ export const Explore = () => {
                             Oldest
                         </option>
                     </select>
-
                 </div>
                 <GenreDiv className="flex gap-5 font-bold">
                     <div ><button className="underline underline-offset-8">Trending</button></div>
-                    <div><button >Top</button></div>
-                    <div><button >Art</button></div>
-                    <div><button >Collectibles</button></div>
-                    <div><button >Domain Names</button></div>
-                    <div><button >Music</button></div>
-                    <div><button >Photography</button></div>
-                    <div><button >Sports</button></div>
-                    <div><button >Trading Cards</button></div>
-                    <div><button >Utility</button></div>
-                    <div><button >Virtual Worlds</button></div>
+                    <div><button onClick={() =>setCateId('63885498724e607fccd3c3fe')}>Art</button></div>
+                    <div><button onClick={() =>setCateId('639abd713e03ff2be5a50461')}>Collectibles</button></div>
+                    <div><button onClick={() =>setCateId('639abd803e03ff2be5a50463')}>Domain Names</button></div>
+                    <div><button onClick={() =>setCateId('638854a1724e607fccd3c404')}>Music</button></div>
+                    <div><button onClick={() =>setCateId('638854ad724e607fccd3c40a')}>Photography</button></div>
+                    <div><button onClick={() =>setCateId('638854b4724e607fccd3c410')}>Sports</button></div>
+                    <div><button onClick={() =>setCateId('639abd963e03ff2be5a50467')}>Trading Cards</button></div>
+                    <div><button onClick={() =>setCateId('639abd9f3e03ff2be5a50469')}>Utility</button></div>
+                    <div><button onClick={() =>setCateId('639abdad3e03ff2be5a5046b')}>Virtual Worlds</button></div>
                 </GenreDiv>
-                <div className="mt-6 grid grid-cols-4">
+                <div className="mt-6 flex flex-wrap gap-10">
                     {asset.map((item) => (
                         <NFT_CARD
+                            id={item._id}
                             picture={item.image}
                             pictureName={item.name}
                             price={item.price}

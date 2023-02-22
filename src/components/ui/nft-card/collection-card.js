@@ -9,7 +9,7 @@ const Collection_CARD = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/collection")
+            .get("https://nft-marketplace-service-production.up.railway.app/api/asset/")
             .then(
                 response => setCollection(response.data))
     }, [])

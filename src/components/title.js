@@ -13,7 +13,7 @@ const TextDestc = styled.div`
 `
 function Title() {
     return (
-        <div className='flex mt-40 gap-24 ml-16'>
+        <div className='flex mt-40 gap-24 ml-16 mb-4'>
             <div className="hero__content">
                 <h2 >
                     Discover rare digital art and collect<br />
@@ -28,7 +28,7 @@ function Title() {
                     </p>
                 </TextDestc>
                 <TitleButton>
-                    <Link to="/market"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Expore</button>
+                    <Link to="/market"><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Explore</button>
                     </Link>
                     <Link to='/create'><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
                     </Link>

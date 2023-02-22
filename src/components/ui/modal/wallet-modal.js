@@ -5,8 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import web3 from 'web3'
+import jwt_decode from "jwt-decode";
 
-const WalletModal = ({ setOpenLogin, loginSuccess}) => {
+const WalletModal = ({ setOpenLogin, loginSuccess }) => {
     const formSchema = Yup.object().shape({
         password: Yup.string()
             .required('Password is mendatory')
@@ -21,12 +23,15 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [passwordLogin, setPasswordLogin] = useState('')
+    const [message, setMessage] = useState('')
     const [createNewAccount, setCreateNewAccount] = useState(false)
     const [wallet, setWallet] = useState([])
     const [loginMetamask, setLoginMetamask] = useState(false);
     const [errorLogin, setErrorLogin] = useState(false);
     const [signature, setSignature] = useState('');
-    const [token,setToken] = useState('')
+    const [address, setAddress] = useState('')
+    const [token, setToken] = useState('')
+    let Web3 = require('web3')
     const clickedRegister = () => {
         setRegisterAccount(true);
     }
@@ -39,25 +44,18 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
         const payload = {
             password: passwordLogin
         }
+        console.log(payload.password)
         try {
             await axios
-                .post(`http://localhost:3000/api/auth/signature`, payload)
+                .post(`https://nft-marketplace-service-production.up.railway.app/api/auth/signature`, payload.password)
                 .then((response) => {
-                    const data  ={
-                        message: 'hello',
-                        signature: `${response.data.signature}`
-                    }
-                    console.log(data)
-                    axios.post(`http://localhost:3000/api/auth/login`,data)
-                    .then((res) => {
-                        setToken(res.data.accessToken)
-                        localStorage.setItem('Token', JSON.stringify(res.data.accessToken));  
+                        console.log(response.data.accessToken)
+                        setToken(response.data.accessToken)
+                        localStorage.setItem('token', JSON.stringify(response.data.accessToken));  
                         setLoginMetamask(true);
-                        navigate('/account');
+                        navigate('/account',{replace: true});
                         setOpenLogin(false);
-                    })
-                }
-                )
+                    })               
         } catch (error) {
             setErrorLogin(true);
         }
@@ -66,12 +64,21 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
     const { errors } = formState
     const onSubmit = (data) => {
         axios
-            .post("http://localhost:3000/api/auth/create", data)
+            .post("https://nft-marketplace-service-production.up.railway.app/api/auth/create", data)
             .then(
-                response => setWallet(response.data))
-        setCreateNewAccount(true);
+                response => {
+                    setCreateNewAccount(true)
+                    localStorage.setItem('token',response.data)
+                    const adr = jwt_decode(response.data)
+                    setAddress(adr.sub)
+                    axios.get(`https://nft-marketplace-service-production.up.railway.app/api/user/info/${adr.sub}`)
+                        .then((res)=> {
+                                setWallet(res.data)
+                                console.log(res.data)
+                        })
+                }
+            )
     }
-
     return (
         <div>
             <div className=" bg-zinc-200 opacity-95 fixed inset-0 z-50   ">
@@ -92,6 +99,14 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
                                         <img src={metamask} className="w-44 ml-28" />
                                         <div className="flex ml-2 mt-2">
                                             <form onSubmit={onSubmitLogin}>
+                                                <div class="mb-6">
+                                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Message</label>
+                                                    <input type="text"
+                                                        id="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+                                                    " required
+                                                        onChange={(e) => setMessage(e.target.value)}
+                                                    />
+                                                </div>
                                                 <div class="mb-6">
                                                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Your password</label>
                                                     <input type="password"
@@ -133,7 +148,7 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
                                                                         <div className="invalid-feedback">{errors.confirmPwd?.message}</div>
                                                                     </div>
                                                                     <button type="submit" className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-                                                                    onClick={() => loginSuccess(true)}
+                                                                        onClick={() => loginSuccess(true)}
                                                                     >Confirm</button>
                                                                 </form>
                                                                 {createNewAccount &&
@@ -143,10 +158,9 @@ const WalletModal = ({ setOpenLogin, loginSuccess}) => {
                                                                                 <div className='flex justify-evenly'>
                                                                                     <div className="flex  text-lg  text-zinc-600 mb-10 mr-16" >Create Your Account Successfull</div>
                                                                                     <button onClick={() => setOpenLogin(false)} className=" rounded w-10 h-9 text-white  bg-red-400 ml-22">X</button></div>
-                                                                                    <div>Your address is {wallet.address}</div>
-                                                                                    <div>Your privateKey is {wallet.privateKey}</div>
-                                                                                </div>
+                                                                                <div>Your address is {address}</div>
                                                                             </div>
+                                                                        </div>
                                                                     </div>
                                                                 }
                                                             </div>
